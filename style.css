@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+li{list-style: none;}
+a{text-decoration: none;}
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:0rem 1rem;
+    height: 100vh;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 2rem;
+    max-width: 79.625rem;
+}
+nav{
+    margin-right: 1.4rem;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    margin-left: 2rem;
+}
+nav ul li a{color: hsl(240, 100%, 5%);}
+nav ul li a:hover{color: hsl(5, 85%, 63%);}
+#menu,#close,.hamb{
+    display: none;
+    cursor: pointer;
+}
+main{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "img img aside"
+                         "ti p aside"
+                         "t-card t-card t-card";
+    max-width: 79.625rem;
+}
+
+picture{
+    grid-area: img;
+}
+
+picture img{
+    max-width: 100%;
+}
+.title{
+    grid-area: ti;
+    max-width: 20rem;
+}
+.title h1{
+    color: hsl(240, 100%, 5%);
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+.f-p{
+    grid-area: p;
+    max-width: 23rem;
+}
+.f-p p{
+    color: hsl(236, 13%, 42%);
+    margin: 3rem 0 4rem 0;
+}
+.f-p a{
+    background-color: hsl(5, 85%, 63%);
+    color: hsl(36, 100%, 99%);
+    padding:1rem 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+.f-p a:hover{
+    background-color: hsl(240, 100%, 5%);
+}
+.aside{
+    grid-area: aside;
+    background-color: hsl(240, 100%, 5%);
+    padding: 2rem;
+    max-width: 20rem;
+    margin-left: 2rem;
+    height: 30rem;
+}
+.aside h2{
+    color: hsl(35, 77%, 62%);
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 0;
+}
+.aside .atp{
+    margin-bottom: 2rem;
+}
+.aside hr{
+    border-color: hsl(236, 13%, 42%);
+    margin-bottom: 2rem;
+}
+.aside .atp h3{
+    color: hsl(36, 100%, 99%);
+    cursor: pointer;
+}
+.aside .atp h3:hover{
+    color: hsl(35, 77%, 62%);
+}
+.aside .atp p{
+    color: hsl(233, 8%, 79%);
+}
+.t-card{
+    grid-area: t-card;
+    display: flex;
+    margin-right: 3.6rem;
+    justify-content: space-between;
+}
+.card{
+    display: flex;
+    align-items: center;
+}
+.card img{
+    width: 8.375rem;
+}
+.card-txt{
+    margin-left: 1rem;
+    width: 15rem;
+}
+.card-txt h2{
+    color: hsl(233, 8%, 79%);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.card-txt h3:hover{
+    color: hsl(5, 85%, 63%);
+}
+.card-txt h3{
+    color: hsl(240, 100%, 5%);
+    margin-bottom: 0;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+.attribution { 
+    font-size: 1.1rem; 
+    text-align: center; 
+    margin-top: 2rem;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media all and (max-width:1265px){
+    .all{
+        height: 100%;
+    }
+    header{
+        padding-top: 2rem;
+    }
+    main{
+        grid-template-columns: auto;
+        grid-template-areas: "img"
+                             "ti"
+                             "p"
+                             "aside"
+                             "t-card";
+        justify-items: center;
+    }
+    .f-p{
+        margin-bottom: 7rem;
+    }
+    .aside{
+        margin-left: 0;
+        margin-bottom: 6rem;
+    }
+    .t-card{
+        flex-direction: column;
+        margin-right: 0;
+    }
+    .card{
+        margin-bottom: 3rem;
+    }
+}
+
+@media all and (max-width:600px){
+    nav{
+        transform: translateX(105%);
+        right: 0;
+        position: fixed;
+        height: 100vh;
+        bottom: 0;
+        display: flex;
+        transition: all 1s ease-in-out;
+        width: 70%;
+        margin-right: 0;
+        background-color: hsl(36, 100%, 99%);
+    }
+    nav ul {
+        justify-content: center;
+        flex-direction: column;
+    }
+    nav ul li{
+        margin-left: 0;
+        margin-bottom: 3rem;
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+    .hamb{
+        display: block;
+    }
+    #menu{
+        display: flex;
+        z-index: 2;
+        position: relative;
+    }
+    #close{
+        display: none;
+        z-index: 2;
+        position: relative;
+    }
+    .aside{
+        max-width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .t-card{
+        margin-top: 6rem;
+    }
+    .card-txt{
+        width: 100%;
+    }
+}
